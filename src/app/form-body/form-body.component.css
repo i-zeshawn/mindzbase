@@ -17,6 +17,7 @@
   line-height: 28px;
   letter-spacing: 0em;
   text-align: left;
+  font-family: 'Bree Serif', serif;
 
 }
 
@@ -44,13 +45,17 @@
   color: white !important;
 }
 
-@media only screen and (max-width: 500px) {
+@media only screen and (max-width: 800px) {
   .label-hide {
     display: none;
   }
 
   .category-select {
     width: 50%;
+  }
+
+  .custom-flex {
+    width: 100% !important;
   }
 
   .category-select-div {
@@ -70,4 +75,16 @@
 
 .border-2 {
   border-width: 1px;
+}
+
+.custom-flex {
+  width: 60%;
+}
+
+[multiple], [type=date], [type=datetime-local], [type=email], [type=month], [type=number], [type=password], [type=search], [type=tel], [type=text], [type=time], [type=url], [type=week], select, textarea {
+  border-color: #d1d5db;
+}
+
+.mat-checkbox-indeterminate.mat-accent .mat-checkbox-background, .mat-checkbox-checked.mat-accent .mat-checkbox-background {
+  background-color: lawngreen;
 }

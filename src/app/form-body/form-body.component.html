@@ -19,7 +19,7 @@
       </div>
       <h4 class="heading-form">Photos</h4>
       <sub>You can add upto 24 photos</sub>
-      <div class="flex">
+      <div class="mb-5 flex custom-flex">
 
         <div class=" justify-center items-center w-full mt-4" style="width: 50%;">
           <label for="dropzone-file" style="height: 310px"
@@ -57,7 +57,96 @@
             </label>
           </div>
         </div>
+
       </div>
+      <hr>
+      <div>
+
+        <h4 class="heading-form">Details</h4>
+        <div class="mb-5 flex custom-flex">
+
+          <div class=" justify-center items-center w-full mt-4" style="width: 70%;">
+            <div class="mb-4">
+              <label class="block text-gray-700 text-sm font-bold mb-2" for="title">
+                Title
+              </label>
+              <input
+                class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                id="title" name="title" type="text">
+            </div>
+            <div class="mb-4">
+              <label class="block text-gray-700 text-sm font-bold mb-2" for="username">
+                Description
+              </label>
+              <editor
+                apiKey="ma4bhg9448864e35asz6aejqd05f3wlww44k3f13a6k2qf33"
+                [init]="tiny_config">
+              </editor>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <h4 class="heading-form">Features</h4>
+        <div class="mb-5 flex custom-flex">
+
+          <div class=" justify-center items-center w-full mt-4" style="width: 70%;">
+            <div class="mb-4">
+              <label class="block text-gray-700 text-sm font-bold mb-2" for="transmission">
+                Transmission
+              </label>
+              <input
+                class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                id="transmission" name="transmission" type="text">
+            </div>
+            <div class="mb-4">
+              <label class="block text-gray-700 text-sm font-bold mb-2" for="fuel_type">
+                Fuel Type
+              </label>
+              <input
+                class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                id="fuel_type" name="fuel_type" type="text">
+            </div>
+            <div class="mb-4">
+              <label class="block text-gray-700 text-sm font-bold mb-2" for="built_year">
+                Built Year
+              </label>
+              <input
+                class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                id="built_year" name="built_year" type="text">
+            </div>
+            <div class="mb-4">
+              <label class="block text-gray-700 text-sm font-bold mb-2" for="color">
+                Color
+              </label>
+              <input
+                class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                id="color" name="color" type="text">
+            </div>
+            <div class="mb-4">
+              <label class="block text-gray-700 text-sm font-bold mb-2" for="mileage">
+                Mileage
+              </label>
+              <input
+                class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                id="mileage" name="color" type="mileage">
+            </div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <h4 class="heading-form">Maintenance</h4>
+        <div class="mb-5 flex custom-flex">
+
+          <div class=" justify-center items-center w-full mt-4" style="width: 70%;">
+            <div class="mb-4">
+              <mat-checkbox></mat-checkbox>
+              Maintained By Company
+            </div>
+          </div>
+        </div>
+      </div>
+
     </div>
   </form>
 </div>
