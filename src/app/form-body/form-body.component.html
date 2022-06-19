@@ -22,38 +22,38 @@
       <div class="mb-5 flex custom-flex">
 
         <div class=" justify-center items-center w-full mt-4" style="width: 50%;">
-          <label for="dropzone-file" style="height: 310px"
+          <label for="dropzone-file1" style="height: 310px"
                  class="flex flex-col justify-center items-center w-full h-64 bg-white rounded-lg border-2 border-gray-300 border-solid cursor-pointer dark:hover:bg-bray-800 dark:bg-gray-700 hover:bg-gray-100 dark:border-gray-600 dark:hover:border-gray-500 dark:hover:bg-gray-600">
             <div class="flex flex-col justify-center items-center pt-5 pb-6">
               <mat-icon color="accent" class="add-file-mat-icon">add</mat-icon>
             </div>
-            <input id="dropzone-file" type="file" class="hidden">
+            <input id="dropzone-file1" type="file" class="hidden">
           </label>
         </div>
 
         <div class="grid grid-cols-2" style="width: 50%;gap: 10px;margin-left: 10px">
           <div class="flex justify-center items-center w-full mt-4" style="height: 150px">
-            <label for="dropzone-file" style="height: inherit"
+            <label for="dropzone-file2" style="height: inherit"
                    class="flex flex-col justify-center items-center w-full h-64 bg-white rounded-lg border-2 border-gray-300 border-solid cursor-pointer dark:hover:bg-bray-800 dark:bg-gray-700 hover:bg-gray-100 dark:border-gray-600 dark:hover:border-gray-500 dark:hover:bg-gray-600">
-              <input id="dropzone-file" type="file" class="hidden">
+              <input id="dropzone-file2" type="file" class="hidden">
             </label>
           </div>
           <div class="flex justify-center items-center w-full mt-4" style="height: 150px">
-            <label for="dropzone-file" style="height: inherit"
+            <label for="dropzone-file3" style="height: inherit"
                    class="flex flex-col justify-center items-center w-full h-64 bg-white rounded-lg border-2 border-gray-300 border-solid cursor-pointer dark:hover:bg-bray-800 dark:bg-gray-700 hover:bg-gray-100 dark:border-gray-600 dark:hover:border-gray-500 dark:hover:bg-gray-600">
-              <input id="dropzone-file" type="file" class="hidden">
+              <input id="dropzone-file3" type="file" class="hidden">
             </label>
           </div>
           <div class="flex justify-center items-center w-full" style="height: 150px">
-            <label for="dropzone-file" style="height: inherit"
+            <label for="dropzone-file4" style="height: inherit"
                    class="flex flex-col justify-center items-center w-full h-64 bg-white rounded-lg border-2 border-gray-300 border-solid cursor-pointer dark:hover:bg-bray-800 dark:bg-gray-700 hover:bg-gray-100 dark:border-gray-600 dark:hover:border-gray-500 dark:hover:bg-gray-600">
-              <input id="dropzone-file" type="file" class="hidden">
+              <input id="dropzone-file4" type="file" class="hidden">
             </label>
           </div>
           <div class="flex justify-center items-center w-full" style="height: 150px">
-            <label for="dropzone-file" style="height: inherit"
+            <label for="dropzone-file5" style="height: inherit"
                    class="flex flex-col justify-center items-center w-full h-64 bg-white rounded-lg border-2 border-gray-300 border-solid cursor-pointer dark:hover:bg-bray-800 dark:bg-gray-700 hover:bg-gray-100 dark:border-gray-600 dark:hover:border-gray-500 dark:hover:bg-gray-600">
-              <input id="dropzone-file" type="file" class="hidden">
+              <input id="dropzone-file5" type="file" class="hidden">
             </label>
           </div>
         </div>
@@ -75,12 +75,12 @@
                 id="title" name="title" type="text">
             </div>
             <div class="mb-4">
-              <label class="block text-gray-700 text-sm font-bold mb-2" for="username">
+              <label class="block text-gray-700 text-sm font-bold mb-2" for="description">
                 Description
               </label>
-              <editor
-                apiKey="ma4bhg9448864e35asz6aejqd05f3wlww44k3f13a6k2qf33"
-                [init]="tiny_config">
+              <editor id="description"
+                      apiKey="ma4bhg9448864e35asz6aejqd05f3wlww44k3f13a6k2qf33"
+                      [init]="tiny_config">
               </editor>
             </div>
           </div>
@@ -146,6 +146,147 @@
           </div>
         </div>
       </div>
+      <div class="custom-flex">
+        <h4 class="heading-form">Price</h4>
+        <div class="mb-4 seventy-width">
+          <label class="block text-gray-700 text-sm font-bold mb-2" for="price_type">
+            Price Type
+          </label>
+          <input
+            class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            id="price_type" name="price_type" type="text">
+        </div>
+        <div class="mb-4 seventy-width">
+          <input
+            class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            name="price_type" type="number" placeholder="0.00">
+        </div>
+      </div>
+      <div class="custom-flex">
+        <h4 class="heading-form">Contact Details</h4>
+        <div class="mb-4 seventy-width">
+          <label class="block text-gray-700 text-sm font-bold mb-2" for="name_on_ad">
+            Name on the Ad
+          </label>
+          <input
+            class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            id="name_on_ad" name="name_on_ad" type="text">
+        </div>
+        <div class="mb-4 seventy-width">
+          <label class="block text-gray-700 text-sm font-bold mb-2" for="email">
+            Email Address
+          </label>
+          <input
+            class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            id="email" name="email" type="email">
+        </div>
+        <div class="mb-4 seventy-width">
+          <label class="block text-gray-700 text-sm font-bold mb-2" for="phone_number">
+            Phone Number
+          </label>
+          <input
+            class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            id="phone_number" name="phone_number" type="number">
+        </div>
+        <div class="mb-4 seventy-width">
+          <label class="block text-gray-700 text-sm font-bold mb-2" for="whatsapp_number">
+            Whatsapp
+          </label>
+          Show Whatsapp No
+          <mat-slide-toggle></mat-slide-toggle>
+          <input
+            class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            id="whatsapp_number" name="whatsapp_number" type="number">
+        </div>
+        <div class="mb-4 seventy-width">
+          <label class="block text-gray-700 text-sm font-bold mb-2" for="location">
+            Your location (e.g city)
+          </label>
+          <input
+            class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            id="location" name="location" type="text">
+        </div>
+        <div class="mb-4 seventy-width">
+          <label class="block text-gray-700 text-sm font-bold mb-2" for="area">
+            Area
+          </label>
+          <input
+            class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            id="area" name="area" type="text">
+        </div>
+      </div>
+      <div class="custom-flex">
+        <h4 class="heading-form">Options</h4>
+        <div class="flex flex-row mb-4 justify-around custom-flex-to-column">
+          <div class="flex flex-col">
+            <mat-checkbox>4x4</mat-checkbox>
+            <mat-checkbox>ABS</mat-checkbox>
+            <mat-checkbox>Adaptive Lights</mat-checkbox>
+            <mat-checkbox>Adaptive Cruise Control</mat-checkbox>
+            <mat-checkbox>Airbags</mat-checkbox>
+            <mat-checkbox>Air conditioning</mat-checkbox>
+            <mat-checkbox>Alarm</mat-checkbox>
+            <mat-checkbox>Upholstery Leather</mat-checkbox>
+            <mat-checkbox>Bluetooth</mat-checkbox>
+            <mat-checkbox>On-board computer</mat-checkbox>
+            <mat-checkbox>Central Locking</mat-checkbox>
+            <mat-checkbox>Climate Control</mat-checkbox>
+            <mat-checkbox>Cruise Control</mat-checkbox>
+            <mat-checkbox>Blind spot detection</mat-checkbox>
+            <mat-checkbox>Electric tailgate</mat-checkbox>
+            <mat-checkbox>Electric door mirrors</mat-checkbox>
+          </div>
+          <div class="flex flex-col">
+            <mat-checkbox>Electric seat adjustment</mat-checkbox>
+            <mat-checkbox>Electronic Stability Program (ESP)</mat-checkbox>
+            <mat-checkbox>Emergency brake assist</mat-checkbox>
+            <mat-checkbox>Isofix</mat-checkbox>
+            <mat-checkbox>Keyless entry</mat-checkbox>
+            <mat-checkbox>Alloy wheels</mat-checkbox>
+            <mat-checkbox>Metallic paint</mat-checkbox>
+            <mat-checkbox>Fog lights</mat-checkbox>
+            <mat-checkbox>Fog lights</mat-checkbox>
+            <mat-checkbox>Navigation System</mat-checkbox>
+            <mat-checkbox>Open roof</mat-checkbox>
+            <mat-checkbox>Panaroma roof</mat-checkbox>
+            <mat-checkbox>Parking assist</mat-checkbox>
+            <mat-checkbox>Parking camera</mat-checkbox>
+            <mat-checkbox>Parking sensor</mat-checkbox>
+            <mat-checkbox>Radio</mat-checkbox>
+            <mat-checkbox>Sliding Door</mat-checkbox>
+          </div>
+          <div class="flex flex-col">
+            <mat-checkbox>Sports Package</mat-checkbox>
+            <mat-checkbox>Sports seats</mat-checkbox>
+            <mat-checkbox>Voice control</mat-checkbox>
+            <mat-checkbox>Immobilizer</mat-checkbox>
+            <mat-checkbox>Start-stop system</mat-checkbox>
+            <mat-checkbox>Massage chair</mat-checkbox>
+            <mat-checkbox>Seat ventilation</mat-checkbox>
+            <mat-checkbox>Seat heating</mat-checkbox>
+            <mat-checkbox>Steering wheel heating</mat-checkbox>
+            <mat-checkbox>Traction control</mat-checkbox>
+            <mat-checkbox>Trailer hitch</mat-checkbox>
+            <mat-checkbox>USB</mat-checkbox>
+            <mat-checkbox>Traffic Sign Recogniton</mat-checkbox>
+            <mat-checkbox>Fatigue Detection</mat-checkbox>
+            <mat-checkbox>Heated Door Mirrors</mat-checkbox>
+            <mat-checkbox>Heated Door Mirrors</mat-checkbox>
+            <mat-checkbox>Xenon Lighting</mat-checkbox>
+          </div>
+        </div>
+      </div>
+      <div class="bottom-buttons mt-4">
+        <button type="button" style="background-color: #E5E5E5"
+                class="text-white  hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-3 md:mr-0 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+          Preview Ad
+        </button>
+        <button type="button"
+                class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-3 md:mr-0 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+          Post an Ad
+        </button>
+      </div>
+
 
     </div>
   </form>
