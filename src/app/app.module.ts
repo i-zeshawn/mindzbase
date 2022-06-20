@@ -15,6 +15,8 @@ import {MatSlideToggleModule} from "@angular/material/slide-toggle";
 import {MatButtonModule} from "@angular/material/button";
 import {ReactiveFormsModule} from "@angular/forms";
 import {MatSelectModule} from "@angular/material/select";
+import {Options} from "./models/Options";
+import {HttpClientModule} from "@angular/common/http";
 
 @NgModule({
   declarations: [
@@ -35,8 +37,9 @@ import {MatSelectModule} from "@angular/material/select";
     MatButtonModule,
     ReactiveFormsModule,
     MatSelectModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [Options],
   bootstrap: [AppComponent]
 })
 export class AppModule {

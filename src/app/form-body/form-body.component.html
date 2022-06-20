@@ -1,5 +1,5 @@
 <div class="form-div">
-  <form class="form-main bg-white m-auto" [formGroup]="carForm">
+  <form class="form-main bg-white m-auto" [formGroup]="carForm" (submit)="addCar()">
     <div class="flex flex-col flex-wrap">
       <div class="mb-5">
         <h3 class="heading-form">Select Category</h3>
@@ -127,7 +127,7 @@
               </label>
               <input
                 class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                id="color" name="color" type="text">
+                id="color" formControlName="color" name="color" type="text">
             </div>
             <div class="mb-4">
               <label class="block text-gray-700 text-sm font-bold mb-2" for="mileage">
@@ -135,7 +135,7 @@
               </label>
               <input
                 class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                id="mileage" name="color" type="mileage">
+                id="mileage" name="color" formControlName="mileage" type="mileage">
             </div>
           </div>
         </div>
@@ -159,7 +159,7 @@
             Price Type
 
           </label>
-          <mat-select matInput formControlName="price_type"
+          <mat-select matInput formControlName="price_type" id="price_type"
                       class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
             <mat-option value="10000">10000</mat-option>
             <mat-option value="20000">20000</mat-option>
@@ -167,7 +167,7 @@
           </mat-select>
         </div>
         <div class="mt-1 relative rounded-md shadow-sm seventy-width">
-          <input type="number" step="0.01" name="price" id="price"
+          <input type="number" step="0.01" name="price" id="price" formControlName="price"
                  class="focus:ring-indigo-500 focus:border-indigo-500 block w-full pl-7 pr-12 sm:text-sm border-gray-300 rounded-md"
                  placeholder="0.00">
           <div style="padding-top: 3%" class="absolute inset-y-0 right-0 flex items-center">
@@ -212,7 +212,7 @@
           <mat-slide-toggle formControlName="show_whatsapp"></mat-slide-toggle>
           <input
             class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-            formControlName="whatsapp_number" id="whatsapp_number" name="whatsapp_number" type="number">
+            formControlName="whatsapp" id="whatsapp_number" name="whatsapp_number" type="number">
         </div>
         <div class="mb-4 seventy-width">
           <label class="block text-gray-700 text-sm font-bold mb-2" for="location">
@@ -235,7 +235,7 @@
         <h4 class="heading-form">Options</h4>
         <div class="flex flex-row mb-4 justify-around custom-flex-to-column">
           <div class="flex flex-col">
-            <mat-checkbox [checked]="options.four_by_four">4x4</mat-checkbox>
+            <mat-checkbox [checked]="options.four_by_four" >4x4</mat-checkbox>
             <mat-checkbox [checked]="options.abs">ABS</mat-checkbox>
             <mat-checkbox [checked]="options.adaptive_lights">Adaptive Lights</mat-checkbox>
             <mat-checkbox [checked]="options.adaptive_cruise_control">Adaptive Cruise Control</mat-checkbox>
@@ -296,7 +296,7 @@
                 class="text-white  hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-3 md:mr-0 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
           Preview Ad
         </button>
-        <button type="button"
+        <button type="submit"
                 class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-3 md:mr-0 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
           Post an Ad
         </button>
