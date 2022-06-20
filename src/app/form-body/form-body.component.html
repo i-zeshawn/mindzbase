@@ -1,5 +1,5 @@
 <div class="form-div">
-  <form class="form-main bg-white m-auto">
+  <form class="form-main bg-white m-auto" [formGroup]="carForm">
     <div class="flex flex-col flex-wrap">
       <div class="mb-5">
         <h3 class="heading-form">Select Category</h3>
@@ -70,15 +70,15 @@
               <label class="block text-gray-700 text-sm font-bold mb-2" for="title">
                 Title
               </label>
-              <input
-                class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                id="title" name="title" type="text">
+              <input matInput formControlName="title"
+                     class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                     id="title" name="title" type="text">
             </div>
             <div class="mb-4">
               <label class="block text-gray-700 text-sm font-bold mb-2" for="description">
                 Description
               </label>
-              <editor id="description"
+              <editor id="description" matInput formControlName="description"
                       apiKey="ma4bhg9448864e35asz6aejqd05f3wlww44k3f13a6k2qf33"
                       [init]="tiny_config">
               </editor>
@@ -95,17 +95,22 @@
               <label class="block text-gray-700 text-sm font-bold mb-2" for="transmission">
                 Transmission
               </label>
-              <input
-                class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                id="transmission" name="transmission" type="text">
+              <mat-select matInput formControlName="transmission"
+                          class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+                <mat-option value="manual">Manual</mat-option>
+                <mat-option value="auto">Auto</mat-option>
+              </mat-select>
             </div>
             <div class="mb-4">
               <label class="block text-gray-700 text-sm font-bold mb-2" for="fuel_type">
                 Fuel Type
               </label>
-              <input
-                class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                id="fuel_type" name="fuel_type" type="text">
+              <mat-select matInput formControlName="fuel_type"
+                          class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+                <mat-option value="Petrol">opt1</mat-option>
+                <mat-option value="Diesel">opt1</mat-option>
+                <mat-option value="Gas">opt1</mat-option>
+              </mat-select>
             </div>
             <div class="mb-4">
               <label class="block text-gray-700 text-sm font-bold mb-2" for="built_year">
@@ -113,7 +118,8 @@
               </label>
               <input
                 class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                id="built_year" name="built_year" type="text">
+                id="built_year" name="built_year" type="date">
+
             </div>
             <div class="mb-4">
               <label class="block text-gray-700 text-sm font-bold mb-2" for="color">
@@ -140,7 +146,7 @@
 
           <div class=" justify-center items-center w-full mt-4" style="width: 70%;">
             <div class="mb-4">
-              <mat-checkbox></mat-checkbox>
+              <mat-checkbox [checked]="options.adaptive_lights"></mat-checkbox>
               Maintained By Company
             </div>
           </div>
@@ -151,16 +157,26 @@
         <div class="mb-4 seventy-width">
           <label class="block text-gray-700 text-sm font-bold mb-2" for="price_type">
             Price Type
+
           </label>
-          <input
-            class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-            id="price_type" name="price_type" type="text">
+          <mat-select matInput formControlName="price_type"
+                      class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+            <mat-option value="10000">10000</mat-option>
+            <mat-option value="20000">20000</mat-option>
+            <mat-option value="30000">30000</mat-option>
+          </mat-select>
         </div>
-        <div class="mb-4 seventy-width">
-          <input
-            class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-            name="price_type" type="number" placeholder="0.00">
+        <div class="mt-1 relative rounded-md shadow-sm seventy-width">
+          <input type="number" step="0.01" name="price" id="price"
+                 class="focus:ring-indigo-500 focus:border-indigo-500 block w-full pl-7 pr-12 sm:text-sm border-gray-300 rounded-md"
+                 placeholder="0.00">
+          <div style="padding-top: 3%" class="absolute inset-y-0 right-0 flex items-center">
+            <label
+              class="focus:ring-indigo-500 focus:border-indigo-500 h-full py-0 pl-2 pr-7 border-transparent bg-transparent text-gray-500 sm:text-sm rounded-md">PKR</label>
+
+          </div>
         </div>
+
       </div>
       <div class="custom-flex">
         <h4 class="heading-form">Contact Details</h4>
@@ -170,7 +186,7 @@
           </label>
           <input
             class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-            id="name_on_ad" name="name_on_ad" type="text">
+            id="name_on_ad" formControlName="name" name="name_on_ad" type="text">
         </div>
         <div class="mb-4 seventy-width">
           <label class="block text-gray-700 text-sm font-bold mb-2" for="email">
@@ -178,25 +194,25 @@
           </label>
           <input
             class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-            id="email" name="email" type="email">
+            id="email" name="email" formControlName="email" type="email">
         </div>
         <div class="mb-4 seventy-width">
           <label class="block text-gray-700 text-sm font-bold mb-2" for="phone_number">
             Phone Number
           </label>
-          <input
-            class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-            id="phone_number" name="phone_number" type="number">
+          <input formControlName="phone_number"
+                 class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                 id="phone_number" name="phone_number" type="number">
         </div>
         <div class="mb-4 seventy-width">
           <label class="block text-gray-700 text-sm font-bold mb-2" for="whatsapp_number">
             Whatsapp
           </label>
           Show Whatsapp No
-          <mat-slide-toggle></mat-slide-toggle>
+          <mat-slide-toggle formControlName="show_whatsapp"></mat-slide-toggle>
           <input
             class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-            id="whatsapp_number" name="whatsapp_number" type="number">
+            formControlName="whatsapp_number" id="whatsapp_number" name="whatsapp_number" type="number">
         </div>
         <div class="mb-4 seventy-width">
           <label class="block text-gray-700 text-sm font-bold mb-2" for="location">
@@ -204,7 +220,7 @@
           </label>
           <input
             class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-            id="location" name="location" type="text">
+            formControlName="city" id="location" name="location" type="text">
         </div>
         <div class="mb-4 seventy-width">
           <label class="block text-gray-700 text-sm font-bold mb-2" for="area">
@@ -212,67 +228,66 @@
           </label>
           <input
             class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-            id="area" name="area" type="text">
+            id="area" name="area" formControlName="area" type="text">
         </div>
       </div>
       <div class="custom-flex">
         <h4 class="heading-form">Options</h4>
         <div class="flex flex-row mb-4 justify-around custom-flex-to-column">
           <div class="flex flex-col">
-            <mat-checkbox>4x4</mat-checkbox>
-            <mat-checkbox>ABS</mat-checkbox>
-            <mat-checkbox>Adaptive Lights</mat-checkbox>
-            <mat-checkbox>Adaptive Cruise Control</mat-checkbox>
-            <mat-checkbox>Airbags</mat-checkbox>
-            <mat-checkbox>Air conditioning</mat-checkbox>
-            <mat-checkbox>Alarm</mat-checkbox>
-            <mat-checkbox>Upholstery Leather</mat-checkbox>
-            <mat-checkbox>Bluetooth</mat-checkbox>
-            <mat-checkbox>On-board computer</mat-checkbox>
-            <mat-checkbox>Central Locking</mat-checkbox>
-            <mat-checkbox>Climate Control</mat-checkbox>
-            <mat-checkbox>Cruise Control</mat-checkbox>
-            <mat-checkbox>Blind spot detection</mat-checkbox>
-            <mat-checkbox>Electric tailgate</mat-checkbox>
-            <mat-checkbox>Electric door mirrors</mat-checkbox>
+            <mat-checkbox [checked]="options.four_by_four">4x4</mat-checkbox>
+            <mat-checkbox [checked]="options.abs">ABS</mat-checkbox>
+            <mat-checkbox [checked]="options.adaptive_lights">Adaptive Lights</mat-checkbox>
+            <mat-checkbox [checked]="options.adaptive_cruise_control">Adaptive Cruise Control</mat-checkbox>
+            <mat-checkbox [checked]="options.airbags">Airbags</mat-checkbox>
+            <mat-checkbox [checked]="options.air_conditioning">Air conditioning</mat-checkbox>
+            <mat-checkbox [checked]="options.alarm">Alarm</mat-checkbox>
+            <mat-checkbox [checked]="options.upholstery_leather">Upholstery Leather</mat-checkbox>
+            <mat-checkbox [checked]="options.bluetooth">Bluetooth</mat-checkbox>
+            <mat-checkbox [checked]="options.onboard_computer">On-board computer</mat-checkbox>
+            <mat-checkbox [checked]="options.central_locking">Central Locking</mat-checkbox>
+            <mat-checkbox [checked]="options.climate_control">Climate Control</mat-checkbox>
+            <mat-checkbox [checked]="options.cruise_control">Cruise Control</mat-checkbox>
+            <mat-checkbox [checked]="options.blind_spot_detection">Blind spot detection</mat-checkbox>
+            <mat-checkbox [checked]="options.electric_tailgate">Electric tailgate</mat-checkbox>
+            <mat-checkbox [checked]="options.electric_door_mirrors">Electric door mirrors</mat-checkbox>
           </div>
           <div class="flex flex-col">
-            <mat-checkbox>Electric seat adjustment</mat-checkbox>
-            <mat-checkbox>Electronic Stability Program (ESP)</mat-checkbox>
-            <mat-checkbox>Emergency brake assist</mat-checkbox>
-            <mat-checkbox>Isofix</mat-checkbox>
-            <mat-checkbox>Keyless entry</mat-checkbox>
-            <mat-checkbox>Alloy wheels</mat-checkbox>
-            <mat-checkbox>Metallic paint</mat-checkbox>
-            <mat-checkbox>Fog lights</mat-checkbox>
-            <mat-checkbox>Fog lights</mat-checkbox>
-            <mat-checkbox>Navigation System</mat-checkbox>
-            <mat-checkbox>Open roof</mat-checkbox>
-            <mat-checkbox>Panaroma roof</mat-checkbox>
-            <mat-checkbox>Parking assist</mat-checkbox>
-            <mat-checkbox>Parking camera</mat-checkbox>
-            <mat-checkbox>Parking sensor</mat-checkbox>
-            <mat-checkbox>Radio</mat-checkbox>
-            <mat-checkbox>Sliding Door</mat-checkbox>
+            <mat-checkbox [checked]="options.electric_seat_adjustment">Electric seat adjustment</mat-checkbox>
+            <mat-checkbox [checked]="options.electronic_stability_program">Electronic Stability Program (ESP)
+            </mat-checkbox>
+            <mat-checkbox [checked]="options.emergency_brake_assist">Emergency brake assist</mat-checkbox>
+            <mat-checkbox [checked]="options.isofix">Isofix</mat-checkbox>
+            <mat-checkbox [checked]="options.keyless_entry">Keyless entry</mat-checkbox>
+            <mat-checkbox [checked]="options.alloy_wheels">Alloy wheels</mat-checkbox>
+            <mat-checkbox [checked]="options.metallic_paint">Metallic paint</mat-checkbox>
+            <mat-checkbox [checked]="options.fog_lights">Fog lights</mat-checkbox>
+            <mat-checkbox [checked]="options.navigation_system">Navigation System</mat-checkbox>
+            <mat-checkbox [checked]="options.open_roof">Open roof</mat-checkbox>
+            <mat-checkbox [checked]="options.panaroma_roof">Panaroma roof</mat-checkbox>
+            <mat-checkbox [checked]="options.parking_assist">Parking assist</mat-checkbox>
+            <mat-checkbox [checked]="options.parking_camera">Parking camera</mat-checkbox>
+            <mat-checkbox [checked]="options.parking_sensor">Parking sensor</mat-checkbox>
+            <mat-checkbox [checked]="options.radio">Radio</mat-checkbox>
+            <mat-checkbox [checked]="options.sliding_door">Sliding Door</mat-checkbox>
           </div>
           <div class="flex flex-col">
-            <mat-checkbox>Sports Package</mat-checkbox>
-            <mat-checkbox>Sports seats</mat-checkbox>
-            <mat-checkbox>Voice control</mat-checkbox>
-            <mat-checkbox>Immobilizer</mat-checkbox>
-            <mat-checkbox>Start-stop system</mat-checkbox>
-            <mat-checkbox>Massage chair</mat-checkbox>
-            <mat-checkbox>Seat ventilation</mat-checkbox>
-            <mat-checkbox>Seat heating</mat-checkbox>
-            <mat-checkbox>Steering wheel heating</mat-checkbox>
-            <mat-checkbox>Traction control</mat-checkbox>
-            <mat-checkbox>Trailer hitch</mat-checkbox>
-            <mat-checkbox>USB</mat-checkbox>
-            <mat-checkbox>Traffic Sign Recogniton</mat-checkbox>
-            <mat-checkbox>Fatigue Detection</mat-checkbox>
-            <mat-checkbox>Heated Door Mirrors</mat-checkbox>
-            <mat-checkbox>Heated Door Mirrors</mat-checkbox>
-            <mat-checkbox>Xenon Lighting</mat-checkbox>
+            <mat-checkbox [checked]="options.sports_package">Sports Package</mat-checkbox>
+            <mat-checkbox [checked]="options.sports_seats">Sports seats</mat-checkbox>
+            <mat-checkbox [checked]="options.voice_control">Voice control</mat-checkbox>
+            <mat-checkbox [checked]="options.immobilizer">Immobilizer</mat-checkbox>
+            <mat-checkbox [checked]="options.start_stop_system">Start-stop system</mat-checkbox>
+            <mat-checkbox [checked]="options.massage_chair">Massage chair</mat-checkbox>
+            <mat-checkbox [checked]="options.seat_ventilation">Seat ventilation</mat-checkbox>
+            <mat-checkbox [checked]="options.seat_heating">Seat heating</mat-checkbox>
+            <mat-checkbox [checked]="options.steering_wheel_heating">Steering wheel heating</mat-checkbox>
+            <mat-checkbox [checked]="options.traction_control">Traction control</mat-checkbox>
+            <mat-checkbox [checked]="options.trailer_hitch">Trailer hitch</mat-checkbox>
+            <mat-checkbox [checked]="options.usb">USB</mat-checkbox>
+            <mat-checkbox [checked]="options.traffic_sign_recognition">Traffic Sign Recogniton</mat-checkbox>
+            <mat-checkbox [checked]="options.fatigue_detection">Fatigue Detection</mat-checkbox>
+            <mat-checkbox [checked]="options.heated_door_mirrors">Heated Door Mirrors</mat-checkbox>
+            <mat-checkbox [checked]="options.xenon_lighting">Xenon Lighting</mat-checkbox>
           </div>
         </div>
       </div>
