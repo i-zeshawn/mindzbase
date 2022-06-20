@@ -1,5 +1,5 @@
 export class Options {
-  four_by_four: boolean = false;
+  four_by_four: boolean = true;
   abs: boolean = false;
   adaptive_lights: boolean = false;
   adaptive_cruise_control: boolean = false;
